@@ -1,0 +1,23 @@
+{% load static %}
+{% load phones_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link type="text/css" href="{% static 'phones/css/styles.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+{% block content %}
+{% endblock %}
+{% block mainmenu %}
+    <a href="http://127.0.0.1:8000/admin">Админ-панель</a>
+    <ul>
+        {% for m in menu %}
+        <li>{{m}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+</body>

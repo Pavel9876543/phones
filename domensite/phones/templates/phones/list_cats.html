@@ -1,0 +1,12 @@
+{% if cat_selected == '' %}
+Все категории
+{% else %}
+<a href="{% url 'home' %}">Все категории</a>
+{% endif %}
+{% for c in cats %}
+{% if c.slug == cat_selected %}
+{{c.name}}
+{% else %}
+<a href="{{c.get_absolute_url}}">{{c.name}}</a>
+{% endif %}
+{% endfor %}
